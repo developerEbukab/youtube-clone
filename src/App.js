@@ -1,11 +1,11 @@
-import './App.css';
+import "./sass/main.scss";
+import './App.scss';
+import Header from "./components/Header/Header.component";
 
 function App() {
   return (
     <div className="AppContainer">
-      <div className="Header">
-        Header
-      </div>
+      <Header/>
       <div className="Body">
         <div className="Menus">
           Menus

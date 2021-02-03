@@ -1,0 +1,27 @@
+@import "./sass/variables";
+
+.AppContainer{
+  background-color: red;
+  height: 100vh;
+  width: 100vw;
+
+
+  .Body{
+    background-color: green;
+    width: 100%;
+    height: 94vh;
+    display: flex;
+
+    .Menus{
+      background-color: pink;
+      height: 100%;
+      width: 14%;
+    }
+
+    .Content{
+      background-color: indianred;
+      height: 100%;
+      width: 86%;
+    }
+  }
+}
