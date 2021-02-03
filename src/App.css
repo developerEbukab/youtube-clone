@@ -1,0 +1,45 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+}
+
+body {
+  box-sizing: border-box;
+}
+
+.AppContainer{
+  background-color: red;
+  height: 100vh;
+  width: 100vw;
+}
+
+.AppContainer .Header{
+  background-color: blue;
+  width: 100%;
+  height: 6vh;
+}
+
+.AppContainer .Body{
+  background-color: green;
+  width: 100%;
+  height: 94vh;
+  display: flex;
+}
+
+.AppContainer .Body .Menus{
+  background-color: pink;
+  height: 100%;
+  width: 14%;
+}
+
+.AppContainer .Body .Content{
+  background-color: indianred;
+  height: 100%;
+  width: 86%;
+}
