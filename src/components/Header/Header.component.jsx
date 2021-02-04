@@ -8,7 +8,7 @@ class Header extends React.Component{
       <div className="Header">
         <ReactTooltip place="bottom" arrowColor="transparent"/>
         <div className="LeftItems">
-          <i className="fas fa-bars"></i>
+          <i className="fas fa-bars" onClick={this.props.toggleMenuCollapsed}></i>
           <div className="Logo">
             <img src="https://img.icons8.com/color/48/000000/youtube-play.png"/>
             <p>YouTube</p>

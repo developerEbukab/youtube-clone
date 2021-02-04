@@ -1,4 +1,5 @@
 @import "./sass/variables";
+@import "./sass/mixins";
 
 .AppContainer{
   background-color: red;
@@ -10,18 +11,161 @@
     background-color: green;
     width: 100%;
     height: 94vh;
-    display: flex;
+    display: grid;
+    grid-template-columns: 14% 1fr;
 
     .Menus{
-      background-color: pink;
+      background-color: #212121;
+      color: $color-youtube-grey;
       height: 100%;
-      width: 14%;
+      overflow-y: scroll;
+
+      .Item{
+        padding: 1.1rem 0;
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+
+        &:hover{
+          background-color: $color-youtube-grey_light;
+        }
+
+        i{
+          font-size: 1.4rem;
+          margin-bottom: .5rem;
+        }
+
+        p{
+          font-size: .6rem;
+        }
+      }
+    }
+
+    .BigMenus{
+      // background-color: #212121;
+      background-color: $color-youtube-grey_light;
+      color: $color-youtube-grey;
+      height: 100%;
+      overflow-y: scroll;
+
+      .FooterSection{
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        padding-right: .1rem;
+        padding-left: 1.5vw;
+        background-color: #212121;
+        font-size: .8rem;
+
+        .Links{
+          margin-bottom: .7rem;
+          display: flex;
+          flex-wrap: wrap;
+
+          a{
+            margin-right: .5rem;
+            color: $color-youtube-grey;
+            font-weight: bold;
+          }
+        }
+
+        .CopyrightText{
+          // font-size: .8rem;
+        }
+      }
+
+      .Section{
+        // border-bottom: .1px solid $color-youtube-grey;
+        padding: .4rem 0;
+        background-color: #212121;
+        margin-bottom: 1px;
+
+        .Title{
+          font-weight: bold;
+          font-size: .9rem;
+          margin: .6rem 0;
+          margin-left: 1.5vw;
+        }
+        // padding-left: 1.5vw;
+      }
+
+      .SignUpSection{
+        color: $color-white;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        padding-right: 1rem;
+        padding-left: 1.5vw;
+
+        .text{
+          font-size: .9rem;
+        }
+
+        .UserBox{
+          @include FlexHorizontal_AlignCenter;
+          border: 1px solid #3DA6FF;
+          color: #3DA6FF;
+          padding: .4rem 1rem;
+          display: flex;
+          justify-content: space-between;
+          width: 8rem;
+          margin-top: .7rem;
+          // font-size: 1.3rem;
+          
+        
+          i{
+            // margin-right: .5rem;
+            color: #3DA6FF;
+            font-size: 1.5rem;
+          }
+        }
+      }
+
+      .Item{
+        padding: .5rem 0;
+        display: flex;
+        width: 100%;
+        align-items: center;
+        // background-color: green;
+        padding-left: 1.5vw;
+
+        &:hover{
+          background-color: $color-youtube-grey_light;
+        }
+
+        i{
+          font-size: 1.3rem;
+          // margin-right: 3vw;
+          // background-color: red;
+          width: 2rem;
+          height: 2rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 100rem;
+          // height: 2rem;
+        }
+
+        .SpecialIcon{
+          font-size: .9rem;
+          background-color: lighten($color: $color-youtube-grey-main, $amount: 10);
+          color: $color-white;
+        }
+
+        p{
+          font-size: .9rem;
+          margin-left: 1.6vw;
+          color: $color-white;
+        }
+      }
     }
 
     .Content{
       background-color: indianred;
       height: 100%;
-      width: 86%;
     }
+  }
+
+  .MenusCollapsed{
+    grid-template-columns: 4.3vw 1fr;
   }
 }
