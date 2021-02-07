@@ -1,0 +1,203 @@
+@import "../../sass/variables";
+@import "../../sass/mixins";
+
+.Watch{
+  background-color: #191919;
+  width: 100%;
+  min-height: 100%;
+  overflow-y: scroll;
+  color: $color-white;
+  padding: 1.1vw 1.4vw;
+
+  .VideoContent{
+    width: 100%;
+    height: 100%;
+    // background-color: grey;
+    display: grid;
+    grid-template-columns: 73.5% 25.5%;
+    grid-column-gap: 1%;
+
+    .Player{
+      // background-color: red;
+
+      .VideoContainer{
+        width: 100%;
+        height: 73vh;
+
+        img{
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      .VideoDetails{
+        margin-top: 1rem;
+
+        .Hashtags{
+          color:  $color-hashtag;
+          font-size: .8rem;
+        }
+
+        .ControlsContainer{
+          width:  100%;
+          justify-content: space-between;
+          display: flex;
+          align-items: flex-start;
+          margin-top: 1rem;
+          // background-color: pink;
+          // border-bottom: .1px solid lighten($color: #191919, $amount: 5);
+          color: $color-youtube-grey;
+
+          .Count{
+            font-size: .9rem;
+            // font-weight: bold;
+          }
+
+          .Controls{
+            justify-content: space-between;
+            display: flex;
+            align-items: flex-start;
+
+            .SentimentBox{
+              .Sentiments{
+                display: flex;
+                align-items: center;
+                margin-bottom: 1rem;
+              }
+            }
+
+            .Control{
+              display: flex;
+              align-items: center;
+              margin-left: 1.3rem;
+
+              .label{
+                font-size: 1rem;
+                font-weight: bold;
+              }
+
+              i{
+                margin-right: .5rem;
+                font-size:  1.2rem;
+              }
+            }
+
+            .removeLeftMargin{
+              margin-left: 0rem;
+            }
+          }
+        }
+      }
+
+      .VideoInfo{
+        border-top: .1px solid lighten($color: #191919, $amount: 5);
+        border-bottom: .1px solid lighten($color: #191919, $amount: 5);
+        padding: 1.5rem 0;
+        display: grid;
+        grid-template-columns: 4vw 1fr;
+        
+        img{
+          width: 3vw;
+          height: 3vw;
+          border-radius: 1000rem;
+          object-fit: cover;
+          // margin-right: 1rem;
+        }
+
+        .Info{
+          // background-color: green;
+          position: relative;
+
+          .Subscribe{
+            background-color: $youtube-red;
+            color: $color-white;
+            position: absolute;
+            top: 0;
+            right: 0;
+            font-size: 1rem;
+            padding: .5rem .8rem;
+            border-radius: .2rem; 
+          }
+
+          .Subscribers{
+            color: $color-youtube-grey;
+            font-size: .8rem;
+          }
+
+          .More{
+            color: $color-youtube-grey;
+          }
+        }
+      }
+    }
+
+    .Videos{
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      // background-color: pink;
+  
+      .Video{
+        width: 100%;
+        display: grid;
+        grid-template-columns: 43% 57%;
+        // margin-bottom: 2rem;
+        // background-color: grey;
+  
+        .ImageBox{
+          width: 100%;
+          height: 6.5rem;
+          position: relative;
+          background-color: green;
+          margin-bottom: 1rem;
+  
+          img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+  
+          .Time{
+            position: absolute;
+            right: .2rem;
+            bottom: .2rem;
+            padding: .3rem;
+            background-color: black;
+            color: $color-white;
+            font-size: .8rem;
+            font-weight: bold;
+          }
+        }
+  
+        .Details{
+          font-size: .9rem;
+          // background-color: purple;
+          width: 100%;
+          color: grey;
+          padding-left: .5rem;
+  
+          .Picture{
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 1000rem;
+            overflow: hidden;
+            background-color: pink;
+  
+            img{
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
+          }
+  
+          .Title{
+            color: $color-white;
+            font-size: .9rem;
+            margin-bottom: .2rem;
+            // font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+}
