@@ -14,7 +14,7 @@ const generateFakeVideos = () => {
       thumbnailImage: faker.image.image(),
       time: `${faker.random.number().toString().substring(0, 1)}:${faker.random.number().toString().substring(0, 2)}`,
       profilePicture: faker.image.image(),
-      title: faker.commerce.productDescription().substring(0,65),
+      title: faker.commerce.productDescription().substring(0,60),
       name: `${faker.name.firstName()} ${faker.name.lastName()}`,
       date: moment().subtract(faker.random.number(), 'days').fromNow(),
       views: faker.random.number().toString().substring(0,1),
@@ -26,8 +26,27 @@ const generateFakeVideos = () => {
   return fakeVideos
 }
 
+const generateFakeComments = () => {
+  let fakeComments = [];
+  for (var i = 0; i < 10; i++){
+    const data = {
+      time: `${faker.random.number().toString().substring(0, 1)}:${faker.random.number().toString().substring(0, 2)}`,
+      profilePicture: faker.image.image(),
+      comment: faker.lorem.sentence(),
+      name: `${faker.name.firstName()} ${faker.name.lastName()}`,
+      date: moment().subtract(faker.random.number(), 'days').fromNow(),
+      likes: faker.random.number().toString().substring(0,3),
+    }
+    fakeComments = [...fakeComments,data
+    ]
+  }
+  console.log(fakeComments)
+  return fakeComments
+}
+
 const Watch = () => {
   const [videos, setVideos] = useState(generateFakeVideos())
+  const [comments, setComments] = useState(generateFakeComments())
 
   return (
     <div className="Watch">
@@ -77,11 +96,40 @@ const Watch = () => {
               <p className="Subscribers">1.28M subscribers</p>
               <button className="Subscribe">SUBSCRIBE</button>
               <br/>
-              <p>{faker.lorem.sentence()}</p>
+              <p>{faker.lorem.sentences()}</p>
               <br/>
               <h4 className="More">SHOW MORE</h4>
             </div>
           </div>
+          <div className="CommentCount">
+            <p>845 Comments</p>
+            <div className="SortContainer">
+              <i className="fas fa-layer-group"></i>
+              <p className="Text">SORT BY</p>
+            </div>
+          </div>
+          <div className="Comment WithInput">
+            <img src="https://img.icons8.com/fluent/48/000000/test-account.png"/>
+            <div>
+              <input type="text" placeholder="Add a public comment..."/>
+            </div>
+          </div>
+          {comments.map(({likes, comment, name, profilePicture, date}) =>
+            <div className="Comment">
+              <img src={ profilePicture} alt=""/>
+              <div className="CommentDetails">
+                <p className="commentersName"> {name} <span className="TimeOfPost"> {date}</span></p>
+                <p className="commentText">{comment}</p>
+                <div className="CommentFooter">
+                  <div className="LikeAction">
+                    <i className="fas fa-thumbs-up"></i> 
+                    <p className="">{likes}</p>
+                  </div>
+                  <p className="Reply">REPLY</p>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
         <div className="Videos">
           {videos.map(({thumbnailImage, time, profilePicture, title, name, date, views}, index) =>

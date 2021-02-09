@@ -5,6 +5,7 @@
   background-color: red;
   height: 100vh;
   width: 100vw;
+  position: relative;
 
   .Body{
     background-color: green;
@@ -12,5 +13,38 @@
     height: 94vh;
     overflow-y: scroll;
   }
+}
 
+.LeftItems{
+  @include FlexHorizontal_AlignCenter;
+
+  .fa-bars{
+    margin-right: 1.5rem;
+    color: $color-white;
+    font-size: 1.3rem;
+    // background-color: $color-youtube-grey_light;
+    padding: .7rem;
+    border-radius: 1000rem;
+
+    &:active{
+      background-color: $color-youtube-grey_light;
+    }
+  }
+
+  .Logo{
+    @include FlexHorizontal_AlignCenter;
+    color: $color-white;
+
+    img{
+      color: red;
+      width: 2rem;
+      height: 2rem;
+    }
+
+    p{
+      font-family: $font-youtube-logo;
+      font-weight: bold;
+      font-size: 1.4rem;
+    }
+  }
 }

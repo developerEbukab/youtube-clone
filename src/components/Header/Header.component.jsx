@@ -1,14 +1,16 @@
 import React from "react";
 import "./Header.styles.scss";
 import ReactTooltip from 'react-tooltip';
+import { withRouter } from "react-router";
 
 class Header extends React.Component{
   render() {
+    const path = this.props.history.location.pathname
     return (
       <div className="Header">
         <ReactTooltip place="bottom" arrowColor="transparent"/>
         <div className="LeftItems">
-          <i className="fas fa-bars" onClick={this.props.toggleMenuCollapsed}></i>
+          <i className="fas fa-bars" onClick={(path === "/") ? this.props.toggleMenuCollapsed : this.props.toggleDrawerStatus  }></i>
           <div className="Logo">
             <img src="https://img.icons8.com/color/48/000000/youtube-play.png"/>
             <p>YouTube</p>
@@ -38,4 +40,4 @@ class Header extends React.Component{
   }
 }
 
-export default Header;
+export default withRouter(Header);

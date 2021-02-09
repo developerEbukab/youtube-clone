@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import "./Content.styles.scss";
 import faker from "faker";
 import moment from "moment";
+import { Link } from 'react-router-dom';
 
 const generateFakeVideos = () => {
   let fakeVideos = [];
@@ -29,7 +30,7 @@ const Content = () => {
     <div className="Content">
       <div className="Videos">
         {videos.map(({thumbnailImage, time, profilePicture, title, name, date, views}, index) =>
-          <div className="Video" key={index}>
+          <Link to="watch" className="Video" key={index}>
             <div className="ImageBox">
               <img src={thumbnailImage} alt=""/>
               <p className="Time">{time}</p>
@@ -44,7 +45,7 @@ const Content = () => {
                 <p>{views}M views &#8226; {date}</p>
               </div>
             </div>
-          </div>
+          </Link>
         )}
       </div>
     </div>
